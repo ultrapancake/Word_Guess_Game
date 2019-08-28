@@ -33,7 +33,7 @@ document.onkeyup = function (event){
 function isKeyInWord(){
     var isInWord = false;
     // compare the keyInput with the characters of the word
-    for (var i = 0; i < isInWord.length; i++){
+    for (var i = 0; i < word.length; i++){
         if (keyInput == word [i]){
             isInWord = true;
             // Replace the guessed character in guess
