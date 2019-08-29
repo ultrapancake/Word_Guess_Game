@@ -6,6 +6,10 @@ var lives = 10;
 var keyInput = "";
 var word = "";
 var guess = [];
+var randNum = math.floor(math.random()) * word.length);
+var randWord = word[randNum];
+var underScore = [];
+console.log("Random Word Chosen " + randWord);
 // Arrays
 //  - letters
 //  - wordPool
@@ -49,3 +53,11 @@ function isKeyInWord(){
         }
     }
 }
+// Dynamically post underscores for length of word
+var createUnderScore = () => {
+    for(var i = 0; i < randWord.length; i++){
+        underScore.push("_");
+    }
+    return underScore;
+}
+console.log(createUnderScore());
