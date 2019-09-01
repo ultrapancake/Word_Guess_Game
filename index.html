@@ -13,31 +13,58 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <!-- Custom style sheet -->
-    <link rel="stylesheet"  type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
     <!-- Load Audio Files -->
     <div class="container">
-    <!-- Jumbotron image -->
-    <!-- Empty Div to push correct guess -->
-    <div class="row">
-        <div class="col-xs-12 right-guess"></div>
-    </div>
-    <!-- Row with Two Columns
-            column one: place for pictures to push
-            column two: sub rows
-                row 1: Instructions
-                row 2: wins<span>tracking number</span>
-                row 3: current word
-                row 4: active word being guessed
-                row 5: Number of guesses remaining span span
-                row 6: letters already guessed
-                row 7: List of letters guessed -->
+        <!-- Jumbotron image -->
+        <!-- Empty Div to push correct guess -->
+        <div class="row">
+            <div class="col-xs-12 right-guess"></div>
+        </div>
+        <!-- Row with Two Columns -->
+        <div class="row">
+            <!-- column one: place for pictures to push -->
+            <div class="col-xs-6 picture"></div>
+            <!-- column two: sub rows -->
+            <div class="col-xs-6">
+                <!-- row 1: Instructions -->
+                <div class="row">
+                    <div class="col-xs-12 instructions"></div>
+                </div>
+                <!-- row 2: wins<span>tracking number</span> -->
+                <div class="row">
+                    <div class="col-xs-12 wins">
+                        <h3>Wins <span class="tracking-number">0</span></h3>
+                    </div>
+                </div>
+                <!-- row 3: current word -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="rand-word"></h3>
+                    </div>
+                </div>
+                <!-- row 4: Number of guesses remaining span span -->
+                <div class="row">
+                    <div class="col-xs-12 number-guesses">
+                        <h3>Number of Guesses Remaining: <span class="remaining-guesses">0</span></h3>
+                    </div>
+                </div>
+                <!-- row 5: letters already guessed -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="guessed-word"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- sticky footer -->
     <!-- Script Link to JS-->
     <script src="game.js"></script>
-    
+
 </body>
 
 </html>
