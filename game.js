@@ -1,58 +1,14 @@
-// Variables
-//  - lives
-var lives = 10;
-//  - numberWins
-//  - wrongGuess
-var keyInput = "";
-var word = "";
-var guess = [];
-var randNum = math.floor(math.random()) * word.length);
-var randWord = word[randNum];
-var underScore = [];
-console.log("Random Word Chosen " + randWord);
-// Arrays
-//  - letters
-//  - wordPool
-//  - GuessedLetters
-// Boolean
-var gameDone = true;
+// Create an array of options
+    var word = ["SpiderMan", "BatMan", "Flash", "WonderWoman", "GreenArrow", "BlackPanther", "CaptainAmerica", "Hawkeye", "Hulk", "Thor"];
+// Select Random Word
+    var randNum = math.floor(math.random()) * word.length);
+    var randWord = word[randNum];
+    var underScore = [];
+    console.log("Random Word Chosen " + randWord);
+// User's Guess
+    var correctWord = [];
+    var wrongWord= [];
 
-// Key Function
-document.onkeyup = function (event){
-    // key to lowercase
-    keyInput = event.key.toLocaleLowerCase();
-    // log it
-    console.log("Key input: " + keyInput);
-    // if keyInput is not a letter stop (return) and exit
-    // keyInput is a letter
-    // if keyInput matches previous input stop
-    // keyInput is new letter
-    guessedLetters.push(keyInput);
-    // push new letter to HTML
-    document.getElementById("blah").html = "<p>Guessed Letters: </p>" + guessedLetters;
-    // check if keyInput is in word
-}
-
-// Check if the letter is in the word
-function isKeyInWord(){
-    var isInWord = false;
-    // compare the keyInput with the characters of the word
-    for (var i = 0; i < word.length; i++){
-        if (keyInput == word [i]){
-            isInWord = true;
-            // Replace the guessed character in guess
-            guess[i] = keyInput;
-        }
-    }
-    // if keyInput is not a match increase bad guess
-    if (!isInWord){
-        // play audio que
-        lives--;
-        if(lives < 1){
-            gameDone = true;
-        }
-    }
-}
 // Dynamically post underscores for length of word
 var createUnderScore = () => {
     for(var i = 0; i < randWord.length; i++){
@@ -61,3 +17,21 @@ var createUnderScore = () => {
     return underScore;
 }
 console.log(createUnderScore());
+
+// Get user's guess
+document.addEventListener('keypress', (event) => {
+    console.log("Keyboard input event: " + event);
+    var keyCode = event.keyCode;
+    console.log("keyCode event " + keyCode);
+    var keyWord = String.fromCharCode(keyCode);
+    console.log("keyWord string: " + keyWord);
+    // If user's guess is correct
+    if(randWord.indexOf(keyWord) > -1){
+        console.log(true);
+        // Add to right words array
+        rightWord.push(keyWord);
+        console.log("right word: " + rightWord);
+        // Replace underscore with correct letter
+        underScore[randWord.indexOf(keyWord)] = keyWord;
+    }
+})
