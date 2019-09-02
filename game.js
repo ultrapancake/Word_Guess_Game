@@ -1,25 +1,31 @@
 // Create an array of options
     var word = ["spider", "pig", "dog", "cat", "cow", "bird", "horse"];
-// Select Random Word
-    var randNum = Math.floor(Math.random() * word.length);
-    var randWord = word[randNum];
-    var underScore = [];
-        console.log("Random Word Chosen: " + randWord);
+// splitting letters in array
+var randNum = "";
+var letters= [];
+var blanks = 0;
+
+var underScore = [];
 // User's Guess
-    var rightWord = [];
-    var wrongWord= [];
+var rightWord = [];
+var wrongWord= [];
 
-// HTML
-var docUnderScore = document.getElementsByClassName('rand-word');
-
-// Dynamically post underscores for length of word
-var createUnderScore = () => {
-    for(var i = 0; i < randWord.length; i++){
+// Game function to run on resets
+function game(){
+    // move randNum into this function
+    randNum = Math.floor(Math.random() * word.length);
+        console.log("randNum: " + randNum)
+    // create for loop to create underscore and later place guessed letter
+    letters = randNum.split("");
+    blanks= letters.length;
+    for(var i = 0; i < blanks; i++){
         underScore.push("_");
     }
-    return underScore;
+        console.log("underScore: " + underScore)
+    // push underscores to rand-word class
+    document.getElementsByClassName('rand-word').innerHTML=" " + underScore.join(" ");
 }
-        console.log(createUnderScore());
+
 
 // Get user's guess
 document.addEventListener('keypress', (event) => {
@@ -44,7 +50,3 @@ document.addEventListener('keypress', (event) => {
         wrongWord.push(keyWord);
     }
 })
-
-// Push the under score function to the HTML
-docUnderScore[0].innerHTML = createUnderScore().join(' ');//This function runs twice and produces double underscores
-
