@@ -19,8 +19,8 @@ var losses = 0;
 // Game function to run on resets
 function game(){
     // move randNum into this function
-    randNum = Math.floor(Math.random() * word.length);
-        console.log("randNum: " + randNum)
+    random = word[Math.floor(Math.random() * word.length)];
+        console.log("randNum: " + random)
     // create for loop to create underscore and later place guessed letter
     letters = random.split("");
     blanks= letters.length;
@@ -53,13 +53,13 @@ document.onkeyup = function(event) {
     var letterWord = false;
 
     for(var i= 0; i<blanks; i++){
-        if(randNum[i] == keyWord){
+        if(random[i] == keyWord){
             letterWord = true;
         }
     }
     if(letterWord){
         for(var i=0; i < blanks; i++){
-            if(randNum[i]== keyWord){
+            if(random[i]== keyWord){
                 underScore[i] = keyWord;
             }
         }
