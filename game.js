@@ -1,7 +1,7 @@
 // Create an array of options
     var word = ["spider", "pig", "dog", "cat", "cow", "bird", "horse"];
 // splitting letters in array
-var randNum = "";
+var random = "";
 var letters= [];
 var blanks = 0;
 
@@ -22,7 +22,7 @@ function game(){
     randNum = Math.floor(Math.random() * word.length);
         console.log("randNum: " + randNum)
     // create for loop to create underscore and later place guessed letter
-    letters = randNum.split("");
+    letters = random.split("");
     blanks= letters.length;
     for(var i = 0; i < blanks; i++){
         underScore.push("_");
@@ -40,6 +40,9 @@ function reset(){
     game();
     console.log(remainingGuess, wrongWord, underScore);
 }
+// run the game function
+
+game();
 
 // Get user's guess
 document.onkeyup = function(event) {
@@ -49,7 +52,7 @@ document.onkeyup = function(event) {
     // Check the inputed letters
     var letterWord = false;
 
-    for(var i= o; i<blanks; i++){
+    for(var i= 0; i<blanks; i++){
         if(randNum[i] == keyWord){
             letterWord = true;
         }
