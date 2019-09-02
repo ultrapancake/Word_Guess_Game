@@ -1,5 +1,5 @@
 // Create an array of options
-    var word = ["spider", "pig", "dog", "cat", "cow", "bird", "horse"];
+    var word = ["spider", "pig", "dog", "cat", "cow", "bird", "horse", "goose", "giraffe", "elephant", "penguin", "rat", "snake", "chicken", "lamb", "sheep", "goat", "donkey", "rooster"];
 // splitting letters in array
 var random = "";
 var letters= [];
