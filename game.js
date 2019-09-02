@@ -89,5 +89,6 @@ document.onkeyup = function(event) {
     document.getElementById("rand-word").innerHTML=" " + underScore.join(" ");
     // push # of remaining guesses to HTML
     document.getElementById("remaining-guesses").innerHTML=" " + remainingGuess;
+    document.getElementById("guessed-word").innerHTML = "  " + wrongWord.join(" ");
 
 }
