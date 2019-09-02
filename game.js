@@ -6,10 +6,15 @@ var letters= [];
 var blanks = 0;
 
 var underScore = [];
+
 // User's Guess
 var rightWord = [];
 var wrongWord= [];
 var remainingGuess= 5;
+
+// wins and losses base variables
+var wins = 0;
+var losses = 0;
 
 // Game function to run on resets
 function game(){
@@ -61,5 +66,25 @@ document.onkeyup = function(event) {
     }
     console.log(underScore);
     // Check if win or lose
-    
+    if(letters.toString() == underScore.toString()){
+        // wins +1
+        wins++;
+        // Run the reset function
+        reset();
+        // push # of wins to HTML
+        document.getElementsByClassName("tracking-number").innerHTML=""+ wins;
+    }else if (remainingGuess === 0){
+        // losses +1
+        losses++;
+        // Run the reset function
+        reset();
+        // push # of losses to HTML
+        document.getElementsByClassName("losses").innerHTML="" + losses;
+    }
+
+    // push guessed word to underscores on HTML 
+    document.getElementsByClassName("rand-word").innerHTML=" " + underScore.join("");
+    // push # of remaining guesses to HTML
+    document.getElementsByClassName("remaining-guesses").innerHTML=" " + remainingGuess;
+
 }
