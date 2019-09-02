@@ -53,13 +53,13 @@ document.onkeyup = function(event) {
     var letterWord = false;
 
     for(var i= 0; i<blanks; i++){
-        if(random[i] == keyWord){
+        if(random[i] === keyWord){
             letterWord = true;
         }
     }
     if(letterWord){
         for(var i=0; i < blanks; i++){
-            if(random[i]== keyWord){
+            if(random[i] === keyWord){
                 underScore[i] = keyWord;
             }
         }
@@ -69,7 +69,7 @@ document.onkeyup = function(event) {
     }
     console.log(underScore);
     // Check if win or lose
-    if(letters.toString() == underScore.toString()){
+    if(letters.toString() === underScore.toString()){
         // wins +1
         wins++;
         // Run the reset function
