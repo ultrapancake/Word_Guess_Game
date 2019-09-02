@@ -37,25 +37,29 @@ function reset(){
 }
 
 // Get user's guess
-document.addEventListener('keypress', (event) => {
+document.onkeyup = function(event) {
     var keyCode = event.keyCode;
-    var keyWord = String.fromCharCode(keyCode);
+    var keyWord = String.fromCharCode(keyCode).toLowerCase();
         console.log("keyWord string: " + keyWord);
-    // If user's guess is correct
-    if(randWord.indexOf(keyWord) > -1){
-            console.log(true);
-        // Add to right words array
-        rightWord.push(keyWord);
-            console.log("right word: " + rightWord);
-         // Replace underscore with correct letter
-         underScore[randWord.indexOf(keyWord)] = keyWord;
-            console.log("Replace array: " + underScore);
-         docUnderScore[0].innerHTML = underScore.join(' ');
-        // Win
-        if(underScore.join("") === randWord) {
-            alert("You Win");
+    // Check the inputed letters
+    var letterWord = false;
+
+    for(var i= o; i<blanks; i++){
+        if(randNum[i] == keyWord){
+            letterWord = true;
+        }
+    }
+    if(letterWord){
+        for(var i=0; i < blanks; i++){
+            if(randNum[i]== keyWord){
+                underScore[i] = keyWord;
+            }
         }
     }else{
         wrongWord.push(keyWord);
+        remainingGuess --;
     }
-})
+    console.log(underScore);
+    // Check if win or lose
+    
+}
