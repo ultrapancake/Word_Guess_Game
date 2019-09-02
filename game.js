@@ -9,6 +9,7 @@ var underScore = [];
 // User's Guess
 var rightWord = [];
 var wrongWord= [];
+var remainingGuess= 5;
 
 // Game function to run on resets
 function game(){
@@ -26,6 +27,14 @@ function game(){
     document.getElementsByClassName('rand-word').innerHTML=" " + underScore.join(" ");
 }
 
+// Reset Function
+function reset(){
+    remainingGuess= 5;
+    wrongWord= [];
+    underScore= [];
+    game();
+    console.log(remainingGuess, wrongWord, underScore);
+}
 
 // Get user's guess
 document.addEventListener('keypress', (event) => {
