@@ -29,7 +29,7 @@ function game(){
     }
         console.log("underScore: " + underScore)
     // push underscores to rand-word class
-    document.getElementsByClassName('rand-word').innerHTML=" " + underScore.join(" ");
+    document.getElementById("rand-word").innerHTML=" " + underScore.join(" ");
 }
 
 // Reset Function
@@ -75,19 +75,19 @@ document.onkeyup = function(event) {
         // Run the reset function
         reset();
         // push # of wins to HTML
-        document.getElementsByClassName("tracking-number").innerHTML=""+ wins;
+        document.getElementById("tracking-number").innerHTML=""+ wins;
     }else if (remainingGuess === 0){
         // losses +1
         losses++;
         // Run the reset function
         reset();
         // push # of losses to HTML
-        document.getElementsByClassName("losses").innerHTML="" + losses;
+        document.getElementById("losses").innerHTML="" + losses;
     }
 
     // push guessed word to underscores on HTML 
-    document.getElementsByClassName("rand-word").innerHTML=" " + underScore.join("");
+    document.getElementById("rand-word").innerHTML=" " + underScore.join(" ");
     // push # of remaining guesses to HTML
-    document.getElementsByClassName("remaining-guesses").innerHTML=" " + remainingGuess;
+    document.getElementById("remaining-guesses").innerHTML=" " + remainingGuess;
 
 }
