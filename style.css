@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 10px;
-    color: #777777;
+    color: brown;
 }
 .background {
     background-image: url("farm_background.png");
