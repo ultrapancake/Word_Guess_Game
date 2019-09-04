@@ -16,54 +16,54 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+<body class= "background">
     <!-- Load Audio Files -->
-    <div class="container clearfix mb-5">
+    <div class="container">
         <!-- Jumbotron image -->
         <!-- Empty Div to push correct guess -->
-        <div class="row">
-            <div class="col-xs-12 right-guess"></div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 text-center">
+                <h1>Animal Word Guess Game!</h1>
+            </div>
         </div>
-        <!-- Row with Two Columns -->
-        <div class="row">
-            <!-- column one: place for pictures to push -->
-            <div class="col-xs-6 picture"></div>
-            <!-- column two: sub rows -->
-            <div class="col-xs-6">
+        <!-- Game Row-->
+        <div class="row justify-content-md-center">
+            <!-- Main Info Column -->
+            <div class="col-md-12">
                 <!-- row 1: Instructions -->
-                <div class="row">
-                    <div class="col-xs-12 instructions">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 instructions text-center">
                         <h2>Instructions</h2>
                         <p>Guess Different Animals!</p>
                     </div>
                 </div>
                 <!-- row 2: wins<span>tracking number</span> -->
-                <div class="row">
-                    <div class="col-xs-12 wins">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 wins text-center">
                         <h3>Wins: <span id="tracking-number"></span></h3>
                     </div>
                 </div>
                 <!-- row 3: current word -->
-                <div class="row">
-                    <div class="col-xs-12">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 text-center">
                         <h3 id="rand-word"></h3>
                     </div>
                 </div>
                 <!-- row 4: Number of guesses remaining span span -->
-                <div class="row">
-                    <div class="col-xs-12 number-guesses">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 number-guesses text-center">
                         <h3>Number of Guesses Remaining: <span id="remaining-guesses"></span></h3>
                     </div>
                 </div>
                 <!-- row 5: letters already guessed -->
-                <div class="row">
-                    <div class="col-xs-12">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 text-center">
                         <h3>Wrong Letters: <span id="guessed-word"></span></h3>
                     </div>
                 </div>
                 <!-- row 6: Number of losses -->
-                <div class="row">
-                    <div class="col-xs-12">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 text-center">
                         <h3>Losses: <span id="losses"></span></h3>
                     </div>
                 </div>
